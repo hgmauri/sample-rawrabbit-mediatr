@@ -14,8 +14,7 @@ namespace Api.Sample.WebApiSender.Controllers
             _busPublisher = busPublisher;
         }
 
-        [HttpGet]
-        public OkResult Get()
+        public OkResult Sender()
         {
             _busPublisher.PublishAsync(new SampleCreatedEvent { Result = "OK" });
             return Ok();
