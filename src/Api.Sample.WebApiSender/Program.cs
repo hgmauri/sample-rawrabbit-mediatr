@@ -20,7 +20,7 @@ namespace Api.Sample.WebApiSender
         public static void Main(string[] args)
         {
             Log.Logger = new LoggerConfiguration()
-                .Enrich.WithProperty("ApplicationName", $"Sample RabbitMq - {Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}")
+                .Enrich.WithProperty("ApplicationName", $"Sample RabbitMq Sender- {Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}")
                 .Enrich.FromLogContext()
                 .Filter.ByExcluding(Matching.FromSource("Microsoft.AspNetCore.StaticFiles"))
                 .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj} {Properties:j}{NewLine}{Exception}")

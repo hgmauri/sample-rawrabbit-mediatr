@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>Api.Sample.WebApiConsumer</RootNamespace>
-    <UserSecretsId>991c3ff1-790c-488d-aa0e-45fcb35da71e</UserSecretsId>
+    <UserSecretsId>b9ea49bc-e84a-4c8b-96fb-540d75a8fd2d</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\..</DockerfileContext>
   </PropertyGroup>
