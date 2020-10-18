@@ -22,6 +22,8 @@ namespace Api.Sample.WebApiSender
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddRouting(options => options.LowercaseUrls = true);
+
             services.AddMediatR(typeof(SampleCreatedEventHandler));
 
             services.AddRabbitMq(Configuration);
