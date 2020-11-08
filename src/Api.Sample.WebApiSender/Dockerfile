@@ -19,6 +19,11 @@ RUN dotnet build "Api.Sample.WebApiSender.csproj" -c Release -o /app/build
 FROM build AS publish
 RUN dotnet publish "Api.Sample.WebApiSender.csproj" -c Release -o /app/publish
 
+ENV TZ=America/Sao_Paulo
+ENV LANG pt-BR
+ENV LANGUAGE pt-BR
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
