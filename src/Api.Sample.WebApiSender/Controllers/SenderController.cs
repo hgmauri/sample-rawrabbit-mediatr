@@ -1,4 +1,5 @@
-﻿using Api.Sample.Domain.Events;
+﻿using System.Threading.Tasks;
+using Api.Sample.Domain.Events;
 using Api.Sample.Domain.Messaging;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,9 +15,9 @@ namespace Api.Sample.WebApiSender.Controllers
             _busPublisher = busPublisher;
         }
 
-        public OkResult Sender()
+        public async Task<OkResult> Sender()
         {
-            _busPublisher.PublishAsync(new SampleCreatedEvent { Result = "OK" });
+            await _busPublisher.PublishAsync(new SampleCreatedEvent { Result = "OK" });
             return Ok();
         }
     }

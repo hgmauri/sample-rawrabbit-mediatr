@@ -28,6 +28,7 @@ namespace Api.Sample.Infrastructure.Messaging
                     .UseHttpContext()
                     .UseMessageContext(c => new MessageContext { GlobalRequestId = Guid.NewGuid() })
             });
+
             services.AddSingleton<IBusClient>(_ => client);
 
             services.AddScoped<IBusPublisher, BusPublisher>();

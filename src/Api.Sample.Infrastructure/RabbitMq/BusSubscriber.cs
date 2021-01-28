@@ -51,6 +51,6 @@ namespace Api.Sample.Infrastructure.RabbitMq
             return this;
         }
 
-        private static string GetQueueName<T>() => $"{Assembly.GetEntryAssembly()?.GetName()}/{typeof(T).Name}";
+        private static string GetQueueName<T>() => $"{Assembly.GetEntryAssembly()?.GetName().Name}/{typeof(T).Name}";
     }
 }
