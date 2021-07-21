@@ -8,11 +8,11 @@ namespace Api.Sample.Application.EventHandlers
 {
     public class SampleCreatedEventHandler : IRequestHandler<SampleCreatedEvent>
     {
-        public async Task<Unit> Handle(SampleCreatedEvent request, CancellationToken cancellationToken)
+        public Task<Unit> Handle(SampleCreatedEvent request, CancellationToken cancellationToken)
         {
             Log.Information($"{nameof(SampleCreatedEvent)} = {request.Result}");
 
-            return Unit.Value;
+            return Task.FromResult(Unit.Value);
         }
     }
 }

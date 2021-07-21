@@ -18,7 +18,7 @@ namespace Api.Sample.Infrastructure.RabbitMq
         public BusSubscriber(IApplicationBuilder app)
         {
             _serviceProvider = app.ApplicationServices.GetService<IServiceProvider>();
-            _busClient = _serviceProvider.GetService<IBusClient>();
+            _busClient = _serviceProvider?.GetService<IBusClient>();
         }
 
         public IBusSubscriber SubscribeEvent<TEvent>() where TEvent : IEvent, IRequest
